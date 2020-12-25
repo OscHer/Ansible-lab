@@ -31,6 +31,7 @@ Vagrant.configure("2") do |config|
     config.vm.define hostname do |cfg|
       cfg.vm.network :private_network, ip: "#{info[:ip]}"
       cfg.vm.hostname = hostname
+      cfg.vm.box_check_update = false
       #config.vm.provider.vb.name = hostname
       cfg.vm.synced_folder "./planet/", "/vagrant", type: "virtualbox"
     end
